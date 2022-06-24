@@ -1,0 +1,2 @@
+Primary Purple: #9A94DC
+Gray: #545454

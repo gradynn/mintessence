@@ -1,47 +1,36 @@
-import logo from './logo.svg';
 import './App.css';
 import React from 'react';
+import Navbar from "./components/navbar";
+import { BrowserRouter as Router, Routes, Route}
+    from 'react-router-dom';
+import Home from "./pages/home";
+import Explore from "./pages/explore";
+import Showcase from "./pages/showcase";
+import About from "./pages/about";
+import { render } from '@testing-library/react';
 
-class Clock extends React.Component {
+
+class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {date: new Date()};
+    this.state = {
+      loggedIn: false
+    };
   }
 
-  componentDidMount() {
-    this.timerID = setInterval(
-      () => this.tick(), 1000
-    );
-  }
-
-  componentWillUnmount() {
-    clearInterval(this.timerID);
-  }
-
-  tick() {
-    this.setState({
-      date: new Date()
-    });
-  }
-  
   render() {
     return (
-    <div>
-      <h1>Hello, World!</h1>
-      <h2>It is {this.state.date.toLocaleTimeString()}.</h2>
-    </div>
+      <Router>
+      <Navbar />
+      <Routes>
+        <Route path='/' element={<Home/>} />
+        <Route path='/explore' element={<Explore/>} />
+        <Route path='/showcase' element={<Showcase/>} />
+        <Route path='/about' element={<About/>} />
+      </Routes>
+      </Router>
     );
   }
-}
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-          <Clock />
-      </header>
-    </div>
-  );
 }
 
 export default App;
