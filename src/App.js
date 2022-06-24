@@ -14,14 +14,13 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      loggedIn: false
     };
   }
 
   render() {
     return (
       <Router>
-      <Navbar />
+      <Navbar/>
       <Routes>
         <Route path='/' element={<Home/>} />
         <Route path='/explore' element={<Explore/>} />

@@ -25,6 +25,10 @@ export const NavLink = styled(Link)`
     font-weight: 400;
     font-size: 18px;
     padding: 20px;
+
+    @media (max-width: 768px) {
+        display: none;
+    }
 `;
 
 const StyledButton = styled.button`
@@ -34,10 +38,15 @@ const StyledButton = styled.button`
     width: 100px;
     margin: 15px 10px;
     font-size: 18px;
+    border-radius: 5px;
     
     &:hover {
         color: white;
         background-color: #9A94DC;
+    }
+
+    @media (max-width: 768px) {
+        display: none;
     }
 `;
 

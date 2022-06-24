@@ -1,9 +1,18 @@
 import React from 'react';
 import {TextLogo, LogoLink, NavWrapper, LinkWrapper, NavLink, LoginButton} from './navbarElements';
+import { DropMenuButton } from './navbarDropdown';
 import logoSrc from "../assets/text-logo.png";
+import styled from 'styled-components';
 
-const Navbar = () => {
+const NavOuterWrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+`;
+
+const Navbar = (props) => {
     return (
+        <NavOuterWrapper>
             <NavWrapper>
                 <LogoLink to="/">
                     <TextLogo src={logoSrc} />
@@ -14,7 +23,9 @@ const Navbar = () => {
                     <NavLink to="/about">About</NavLink>
                     <LoginButton />
                 </LinkWrapper>
-            </NavWrapper>
+                <DropMenuButton />
+            </NavWrapper>  
+        </NavOuterWrapper>
     );
 }
 
