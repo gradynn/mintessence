@@ -1,2 +1,4 @@
 Primary Purple: #9A94DC
+Dark Purple (Shadows or Selected): #6a729a
 Gray: #545454
+https://colors.muz.li/palette/9A94DC/6a729a/ebefff/d7deff/ffffff

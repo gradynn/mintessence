@@ -1,0 +1,30 @@
+.navWrapper {
+    display: flex;
+	justify-content: space-between;
+	position: -webkit-sticky;
+	position: sticky;
+	top: 0px;
+	z-index: 2;
+	height: 70px;
+	min-height: 70px;
+	width: calc(100% - 1.5rem);
+	/*background-color: #fff;*/
+	padding: 0 1rem;
+    backdrop-filter: blur(10px);
+}
+
+.linkWrapper {
+    justify-content: space-between;
+    display: flex;
+    width: 25%
+}
+
+.active {
+    color: #6a729a;
+}
+
+@media screen and (max-width: 600px) {
+    .linkWrapper {
+        display: none;
+    }
+}
