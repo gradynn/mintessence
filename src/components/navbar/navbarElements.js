@@ -11,10 +11,12 @@ export const NavLink = styled(Link)`
 
     &:hover {
         color: #9A94DC;
+        cursor: default;
     }
 
     &.active {
         color: #6a729a;
+        font-weight: 600;
     }
 `;
 

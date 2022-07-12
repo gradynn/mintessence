@@ -3,7 +3,8 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route}
     from 'react-router-dom';
 import { render } from '@testing-library/react';
-import Navbar from "./components/navbar/navbar"
+import Navbar from './components/navbar/navbar';
+import MobileNavbar from './components/mobileNavbar/mobileNavbar';
 
 
 class App extends React.Component {
@@ -15,11 +16,16 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
+      <>
         <Navbar />
-        <section id="explore">Explore</section>
-        <section id="about">About</section>
-      </div>
+        <MobileNavbar />
+        <section id="explore">
+          Explore
+        </section>
+        <section id="about">
+          About
+        </section>
+      </>
     );
   }
 }

@@ -1,0 +1,39 @@
+.mobileNavWrapper {
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0px;
+    z-index: 2;
+    background-color: white;
+}
+
+.topBar {
+    display: flex;
+    justify-content: space-between;
+}
+
+.dropdownLinks {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+}
+
+.dropdownLinkContainer {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+    height: 10vh;
+}
+
+.dropdownLinkContainer:nth-child(odd) {
+    background-color: #9A94DC;
+}
+
+.dropdownLinkContainer:nth-child(even) {
+    background-color: #6a729a;
+}
+
+@media screen and (min-width: 700px) {
+    .mobileNavWrapper {display: none;}
+}
