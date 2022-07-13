@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Routes, Route}
 import { render } from '@testing-library/react';
 import Navbar from './components/navbar/navbar';
 import MobileNavbar from './components/mobileNavbar/mobileNavbar';
+import HomeView from "./views/homeView";
 
 
 class App extends React.Component {
@@ -19,6 +20,9 @@ class App extends React.Component {
       <>
         <Navbar />
         <MobileNavbar />
+        <section id="homeView">
+          <HomeView />
+        </section>
         <section id="explore">
           Explore
         </section>
