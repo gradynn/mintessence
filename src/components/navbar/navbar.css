@@ -16,11 +16,7 @@
 .linkWrapper {
     justify-content: space-between;
     display: flex;
-    width: 25%
-}
-
-.active {
-    color: #6a729a;
+    width: 500px;
 }
 
 @media screen and (max-width: 700px) {

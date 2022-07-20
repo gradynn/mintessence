@@ -11,7 +11,8 @@ body {
   height: 24in;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+:root {
+  --amplify-primary-color: white;
+  --amplify-primary-tint: white;
+  --amplify-primary-shade: white;
 }
