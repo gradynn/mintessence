@@ -1,0 +1,10 @@
+[
+  {
+    "groupName": "Artists",
+    "precedence": 1
+  },
+  {
+    "groupName": "BasicUsers",
+    "precedence": 2
+  }
+]

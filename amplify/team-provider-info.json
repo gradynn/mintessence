@@ -13,7 +13,8 @@
     },
     "categories": {
       "auth": {
-        "mintessence3452e3de": {}
+        "mintessence3452e3de": {},
+        "userPoolGroups": {}
       }
     }
   }

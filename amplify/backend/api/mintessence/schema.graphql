@@ -1,0 +1,11 @@
+type Submission @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  name: String
+  showcaseID: ID! @index(name: "byShowcase")
+}
+
+type Showcase @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  name: String
+  Submissions: [Submission] @hasMany(indexName: "byShowcase", fields: ["id"])
+}
