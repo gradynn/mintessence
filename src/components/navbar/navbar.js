@@ -55,12 +55,6 @@ class Navbar extends React.Component {
                     <TextLogo src={logoSrc} />
                 </NavLink>
                 <div className="linkWrapper">
-                    <Link to="/explore">
-                        Explore
-                    </Link>
-                    <Link to='/about'>
-                        About
-                    </Link>
                     {
                         this.state.userLoggedIn ? (
                             <NavLink to='/profile'>    

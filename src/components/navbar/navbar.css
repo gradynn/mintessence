@@ -14,7 +14,7 @@
 }
 
 .linkWrapper {
-    justify-content: space-between;
+    justify-content: right;
     display: flex;
     width: 500px;
 }

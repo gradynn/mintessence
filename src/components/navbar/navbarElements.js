@@ -29,7 +29,8 @@ export const UserIcon = styled(FaUserCircle)`
     width: auto;
     color: white;
     transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
-    margin-top: 10px;
+    margin-top: 15px;
+    margin-right: 10px;
     border: 2px solid #9A94DC;
     background-color: #9A94DC;
     border-radius: 50%;
