@@ -64,7 +64,6 @@ export const UserButton = styled.button`
     padding: 1.2em 2.8em;
     text-decoration: none;
     text-align: center;
-    text-transform: uppercase;
     font-weight: 700;
     transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
 

@@ -1,9 +1,20 @@
-.mainWrapper {
+.formWrapper {
     display: grid;
 	place-items: center;
-	height: 100vh;
 }
 
 .lineWrapper {
 	display: flex;
 }
+
+.switchButtonWrapper {
+	margin-top: 10vh;
+	border-radius: 2px;
+}
+
+.mainWrapper {
+	display: grid;
+	justify-content: center;
+	height: 100vh;
+}
+

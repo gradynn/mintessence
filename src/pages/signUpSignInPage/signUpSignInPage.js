@@ -1,33 +1,77 @@
 import { Auth } from 'aws-amplify';
 import React from "react";
 import "./signUpSignInPage.css";
-import { SwitchButtonSelected, SwitchButtonUnselected, TermsText, AcceptTerms } from './signUpSignInElements';
+import { SwitchButtonSelected, SwitchButtonUnselected, TermsText, InputField } from './signUpSignInElements';
+import { Authenticator } from '@aws-amplify/ui-react';
 
 class CustomSignUp extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            acceptedTerms: false
+            acceptedTerms: false,
+            email: '',
+            password: '',
+            passwordBackup: ''
         }
         
-        this.handleChange = this.handleChange.bind(this);
+        this.handleCheckboxChange = this.handleCheckboxChange.bind(this);
+        this.handleEmailChange = this.handleEmailChange.bind(this);
+        this.handlePasswordChange = this.handlePasswordChange.bind(this);
+        this.handlePasswordBackupChange = this.handlePasswordBackupChange.bind(this);
+        this.handleSignUpRequest = this.handleSignUpRequest.bind(this);
     }
 
-    handleChange() {
+    handleCheckboxChange = () => {
         this.setState(prevState => ({
             acceptedTerms: !prevState.acceptedTerms
         }));
     }
 
+    handleEmailChange = (event) => {
+        this.setState({
+            email: event.target.value
+        });
+    }
+
+    handlePasswordChange = (event) => {
+        this.setState({
+            password: event.target.value
+        });
+    }
+
+    handlePasswordBackupChange = (event) => {
+        this.setState({
+            passwordBackup: event.target.value
+        });
+    }
+
+    handleSignUpRequest = async () => {
+        try {
+            const { user } = await Auth.signUp({
+                username: this.state.email,
+                password: this.state.password,
+                autoSignIn: {
+                    enabled: true
+                }
+            });
+            console.log(user);
+        } catch (error) {
+            console.log('error signing up', error);
+        }
+    }
+
     render() {
         return(
             <div>
+                <InputField type='text' value={this.state.email} onChange={this.handleEmailChange} />
+                <InputField type='text' value={this.state.password} onChange={this.handlePasswordChange} />
+                <InputField type='text' value={this.state.passwordBackup} onChange={this.handlePasswordBackupChange} />
                 <div className='lineWrapper'>
-                    <input type="checkbox" onChange={this.handleChange} />
+                    <input type="checkbox" onChange={this.handleCheckboxChange} />
                     <TermsText>I have read and agree to the terms & conditions and privacy policy.</TermsText>
                 </div>
                 {(this.state.acceptedTerms) ? 
-                    <button>Sign Up</button>
+                    <button onClick={this.handleSignUpRequest}>Sign Up</button>
                     : <button disabled>Sign Up</button>}
             </div> 
         );
@@ -52,7 +96,7 @@ class CustomAuthenticator extends React.Component {
 
     render() {
         return(
-            <div className="mainWrapper">
+            <div className='mainWrapper'>
                 <div className="switchButtonWrapper">
                     {(this.state.newUser) ? 
                         <>
@@ -66,12 +110,21 @@ class CustomAuthenticator extends React.Component {
                         </>
                     }
                 </div>
-                {this.state.newUser ?
-                    <CustomSignUp></CustomSignUp> :
-                    <></>}
+                <div className="formWrapper">
+                    {this.state.newUser ?
+                        <CustomSignUp></CustomSignUp> :
+                        <></>}
+                </div>
             </div>
-        )
+            )
     }
 }
 
-export default CustomAuthenticator;
+// Using the basic amazon authenticator for now until I can figure out custom authentication
+let BasicAuthenticator = () => {
+    return(
+        <Authenticator></Authenticator>
+    );
+}
+
+export default BasicAuthenticator;

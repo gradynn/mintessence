@@ -56,7 +56,9 @@ class Navbar extends React.Component {
                 </NavLink>
                 <div className="linkWrapper">
                     {
-                        this.state.userLoggedIn ? (
+                        // IN ORDER TO GET USER ICON TO SHOW UP WHEN LOGGED IN CHANGE THIS THE CHECK THE ASSOCIATED
+                        // STATE VARIABLE, REMOVED USER PROFILE ACCESS FOR MVP
+                        false ? (
                             <NavLink to='/profile'>    
                                 <UserIcon />
                             </NavLink>

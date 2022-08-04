@@ -19,6 +19,7 @@ export const SwitchButtonUnselected = styled.button`
     test-align: center;
     border-bottom: 5px solid #9A94DC;
     padding: 0px 100px 0px 100px;
+    transition: box-shadow 300ms ease-in-out, background-color 300ms ease-in-out;
 
     &:hover {
         color: white;
