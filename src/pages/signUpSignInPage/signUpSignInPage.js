@@ -63,9 +63,6 @@ class CustomSignUp extends React.Component {
     render() {
         return(
             <div>
-                <InputField type='text' value={this.state.email} onChange={this.handleEmailChange} />
-                <InputField type='text' value={this.state.password} onChange={this.handlePasswordChange} />
-                <InputField type='text' value={this.state.passwordBackup} onChange={this.handlePasswordBackupChange} />
                 <div className='lineWrapper'>
                     <input type="checkbox" onChange={this.handleCheckboxChange} />
                     <TermsText>I have read and agree to the terms & conditions and privacy policy.</TermsText>
