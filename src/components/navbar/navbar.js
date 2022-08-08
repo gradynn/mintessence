@@ -1,8 +1,8 @@
 import React from "react";
 import logoSrc from "../../assets/text-logo.png";
-import { Link, TextLogo, UserButton, UserIcon } from "./navbarElements";
+import { TextLogo, UserButton, UserIcon } from "./navbarElements";
 import "./navbar.css";
-import { NavLink,  } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { Auth, Hub } from "aws-amplify";
 
 class Navbar extends React.Component {

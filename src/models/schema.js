@@ -10,13 +10,6 @@ export const schema = {
                     "isRequired": true,
                     "attributes": []
                 },
-                "name": {
-                    "name": "name",
-                    "isArray": false,
-                    "type": "String",
-                    "isRequired": false,
-                    "attributes": []
-                },
                 "showcaseID": {
                     "name": "showcaseID",
                     "isArray": false,
@@ -85,8 +78,8 @@ export const schema = {
                     "isRequired": true,
                     "attributes": []
                 },
-                "name": {
-                    "name": "name",
+                "title": {
+                    "name": "title",
                     "isArray": false,
                     "type": "String",
                     "isRequired": false,
@@ -105,6 +98,27 @@ export const schema = {
                         "connectionType": "HAS_MANY",
                         "associatedWith": "showcaseID"
                     }
+                },
+                "artistName": {
+                    "name": "artistName",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "endDate": {
+                    "name": "endDate",
+                    "isArray": false,
+                    "type": "AWSDate",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "photo": {
+                    "name": "photo",
+                    "isArray": false,
+                    "type": "AWSURL",
+                    "isRequired": false,
+                    "attributes": []
                 },
                 "createdAt": {
                     "name": "createdAt",
@@ -151,5 +165,5 @@ export const schema = {
     },
     "enums": {},
     "nonModels": {},
-    "version": "d5bb9d54a65672e06d18e4beb6770e1c"
+    "version": "493c1626952ffc7dbda81671da773ca7"
 };

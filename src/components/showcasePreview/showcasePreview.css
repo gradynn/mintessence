@@ -20,7 +20,9 @@
 }
 
 .profilePhoto {
+    object-fit: cover;
     height: 300px;
+    width: 300px;
     border-radius: 10px;
     box-shadow: 5px 5px #9A94DC;
 }
@@ -52,7 +54,7 @@ p {
     width: 75px;
     height: 100px;
     padding: 5px;
-    margin: 5px;
+    margin: 6px;
     box-shadow: 5px 5px #9A94DC;
     display: flex;
     flex-direction: column;
@@ -61,7 +63,7 @@ p {
 
 .countdownWrapper {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     margin-bottom: 5px;
 }
 
@@ -83,6 +85,7 @@ p {
     border-radius: 10px;
     transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
     font-size: 20px;
+    width: 400px;
 }
 
 #showcaseButton:hover {

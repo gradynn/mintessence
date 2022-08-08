@@ -3,7 +3,6 @@
   "serviceConfiguration": {
     "apiName": "mintessence",
     "serviceName": "AppSync",
-    "gqlSchemaPath": "/tmp/amplify-0f5c9ec4-4fc3-420c-8b36-ebe48d3c0e90/amplify/backend/api/mintessence/schema.graphql",
     "defaultAuthType": {
       "mode": "API_KEY",
       "keyDescription": "api key description",

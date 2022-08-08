@@ -1,17 +1,47 @@
 import React from 'react';
 import './homePage.css';
 import ShowcasePreview from '../../components/showcasePreview/showcasePreview';
+import { API } from 'aws-amplify';
+import * as queries from '../../graphql/queries';
 
-function HomePage() {
-    return (
-        <section>
-            <ShowcasePreview 
-                imageSrc='https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png' 
-                artistName='Some Artist' 
-                showcaseTitle='Showcase Title' 
-            />
-        </section>
-    );
+class HomePage extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            showcases: [],
+        };
+    }
+
+    componentDidMount() {
+        this.fetchShowcases();
+    }
+
+    async fetchShowcases() {
+        try {
+            // Query all showcases and isolate only the list of showcases
+            let allShowcases = await API.graphql({ query: queries.listShowcases });
+            allShowcases = allShowcases.data.listShowcases.items;
+
+            const cleanShowcases = allShowcases.filter(item => !(item._deleted));
+
+            this.setState({
+                showcases: cleanShowcases
+            })
+        }
+        catch (error) {}
+    }
+
+    render() {
+        return(
+            this.state.showcases.map(item => (
+                <section>
+                    <ShowcasePreview key={item.id} imageSrc={item.photo} showcaseTitle={item.title} artistName={item.artistName} endDate={item.endDate} />
+                </section>
+            )
+            )
+        );
+
+    }
 }
 
 export default HomePage;

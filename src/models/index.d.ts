@@ -14,7 +14,6 @@ type ShowcaseMetaData = {
 
 export declare class Submission {
   readonly id: string;
-  readonly name?: string | null;
   readonly showcaseID: string;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
@@ -24,8 +23,11 @@ export declare class Submission {
 
 export declare class Showcase {
   readonly id: string;
-  readonly name?: string | null;
+  readonly title?: string | null;
   readonly Submissions?: (Submission | null)[] | null;
+  readonly artistName?: string | null;
+  readonly endDate?: string | null;
+  readonly photo?: string | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
   constructor(init: ModelInit<Showcase, ShowcaseMetaData>);
