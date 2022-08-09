@@ -65,8 +65,10 @@ class ShowcasePreview extends React.Component {
             if (m == 0) {
                if (h == 0) {
                     d--;
+                    h = 23;
                } 
                h--;
+               m = 59;
             }
             m--;
             s = 59;
@@ -85,7 +87,7 @@ class ShowcasePreview extends React.Component {
 
     render() {
         return(
-        <div className='primaryWrapper'>
+        <div className='primaryWrapper showcase-animation'>
             <div className='profilePhotoWrapper'>
                 <img className='profilePhoto' src={this.props.imageSrc} a/>
             </div>

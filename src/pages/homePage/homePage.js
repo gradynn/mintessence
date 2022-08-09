@@ -3,8 +3,9 @@ import './homePage.css';
 import ShowcasePreview from '../../components/showcasePreview/showcasePreview';
 import { API } from 'aws-amplify';
 import * as queries from '../../graphql/queries';
+import HomeTagLine from '../../components/homeTagLine';
 
-class HomePage extends React.Component {
+class HomePageShowcases extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -42,6 +43,17 @@ class HomePage extends React.Component {
         );
 
     }
+}
+
+const HomePage = () => {
+    return(
+        <>
+            <section>
+            <HomeTagLine />
+            </section>
+            <HomePageShowcases />
+        </>
+    );
 }
 
 export default HomePage;
