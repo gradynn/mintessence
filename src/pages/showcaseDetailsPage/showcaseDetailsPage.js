@@ -23,7 +23,9 @@ function ShowcaseDetailsPage(props) {
         );
     } else {
         return (
-            
+            <section>
+                Loading...
+            </section>
         );
     }
 }
