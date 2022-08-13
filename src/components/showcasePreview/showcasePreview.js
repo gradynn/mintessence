@@ -1,4 +1,6 @@
+import { button } from 'aws-amplify';
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import './showcasePreview.css';
 
 class CountdownCard extends React.Component {
@@ -36,11 +38,14 @@ class ShowcasePreview extends React.Component {
         secondsUntil -= (minutesUntil * 60000);
         secondsUntil = Math.trunc(secondsUntil / 1000);
 
+        const buttonLink = '/showcase/' + this.props.showcaseId;
+
         this.state = {
-          days: daysUntil,
-          hours: hoursUntil,
-          minutes: minutesUntil,
-          seconds: secondsUntil
+            link: buttonLink,
+            days: daysUntil,
+            hours: hoursUntil,
+            minutes: minutesUntil,
+            seconds: secondsUntil
         };
     }
 
@@ -61,9 +66,9 @@ class ShowcasePreview extends React.Component {
         let m = this.state.minutes;
         let s = this.state.seconds;
 
-        if (s == 0) {
-            if (m == 0) {
-               if (h == 0) {
+        if (s === 0) {
+            if (m === 0) {
+               if (h === 0) {
                     d--;
                     h = 23;
                } 
@@ -101,7 +106,9 @@ class ShowcasePreview extends React.Component {
                     <CountdownCard val={this.state.minutes} unit="m" />
                     <CountdownCard val={this.state.seconds} unit="s" />
                 </div>
-            <button id='showcaseButton'>View Showcase</button>
+                <NavLink to={this.state.link}>
+                    <button id='showcaseButton'>View Showcase</button>
+                </NavLink>
             </div>
         </div>
         );

@@ -25,6 +25,8 @@ class HomePageShowcases extends React.Component {
 
             const cleanShowcases = allShowcases.filter(item => !(item._deleted));
 
+            console.log(cleanShowcases[1]);
+
             this.setState({
                 showcases: cleanShowcases
             })
@@ -36,7 +38,7 @@ class HomePageShowcases extends React.Component {
         return(
             this.state.showcases.map(item => (
                 <section>
-                    <ShowcasePreview key={item.id} imageSrc={item.photo} showcaseTitle={item.title} artistName={item.artistName} endDate={item.endDate} />
+                    <ShowcasePreview key={item.id} imageSrc={item.photo} showcaseTitle={item.title} artistName={item.artistName} endDate={item.endDate} showcaseId={item.id} />
                 </section>
             )
             )

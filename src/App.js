@@ -6,6 +6,7 @@ import Navbar from './components/navbar/navbar';
 import HomePage from './pages/homePage/homePage';
 import ProfilePage from './pages/profilePage/profilePage';
 import CustomAuthenticator from './pages/signUpSignInPage/signUpSignInPage';
+import ShowcaseDetailsPage from './pages/showcaseDetailsPage/showcaseDetailsPage';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <Route path='/' element={<HomePage />} />
       <Route path='/profile' element={<ProfilePage />} />
       <Route path='/sign-in' element={<CustomAuthenticator />} />
+      <Route path='/showcase/:showcaseId' element={<ShowcaseDetailsPage />} />
     </Routes>
     </Router>
   );
