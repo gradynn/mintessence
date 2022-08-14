@@ -19,6 +19,8 @@ function ShowcaseDetailsPage(props) {
         return (
             <div>
                 <p>Artist Name: {showcase.artistName}</p>
+                <p>Title: {showcase.title}</p>
+                <img src={showcase.photo} />
             </div>
         );
     } else {

@@ -37,7 +37,7 @@ class HomePageShowcases extends React.Component {
     render() {
         return(
             this.state.showcases.map(item => (
-                <section>
+                <section className='child'>
                     <ShowcasePreview key={item.id} imageSrc={item.photo} showcaseTitle={item.title} artistName={item.artistName} endDate={item.endDate} showcaseId={item.id} />
                 </section>
             )
@@ -49,12 +49,12 @@ class HomePageShowcases extends React.Component {
 
 const HomePage = () => {
     return(
-        <>
-            <section>
+        <div className='container'>
+            <section className='child'>
             <HomeTagLine />
             </section>
             <HomePageShowcases />
-        </>
+        </div>
     );
 }
 

@@ -10,6 +10,12 @@ const Subheading = styled.p`
     font-weight: 400;
 `;
 
+const Subheading2 = styled.p`
+    font-weight: 400;
+    position: absolute;
+    bottom: 0;
+`;
+
 const Highlight = styled.span`
     color: #9A94DC;
 `;
@@ -19,6 +25,8 @@ const TagLineWrapper = styled.div`
     flex-direction: column;
     justify-content: center;
     text-align: center;
+    position: relative;
+    height: 80vh;
 `;
 
 const HomeTagLine = () => {
