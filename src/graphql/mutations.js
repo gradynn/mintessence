@@ -9,11 +9,14 @@ export const createSubmission = /* GraphQL */ `
     createSubmission(input: $input, condition: $condition) {
       id
       showcaseID
+      photo
+      uploadedDate
       createdAt
       updatedAt
       _version
       _deleted
       _lastChangedAt
+      owner
     }
   }
 `;
@@ -25,11 +28,14 @@ export const updateSubmission = /* GraphQL */ `
     updateSubmission(input: $input, condition: $condition) {
       id
       showcaseID
+      photo
+      uploadedDate
       createdAt
       updatedAt
       _version
       _deleted
       _lastChangedAt
+      owner
     }
   }
 `;
@@ -41,11 +47,14 @@ export const deleteSubmission = /* GraphQL */ `
     deleteSubmission(input: $input, condition: $condition) {
       id
       showcaseID
+      photo
+      uploadedDate
       createdAt
       updatedAt
       _version
       _deleted
       _lastChangedAt
+      owner
     }
   }
 `;

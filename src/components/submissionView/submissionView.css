@@ -1,0 +1,13 @@
+.submissionPhoto {
+    object-fit: cover;
+    width: 350px;
+    height: 350px;
+}
+
+.submissions {
+    display: grid;
+    position: relative;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    justify-items: center;
+}
+

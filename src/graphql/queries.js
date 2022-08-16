@@ -6,11 +6,14 @@ export const getSubmission = /* GraphQL */ `
     getSubmission(id: $id) {
       id
       showcaseID
+      photo
+      uploadedDate
       createdAt
       updatedAt
       _version
       _deleted
       _lastChangedAt
+      owner
     }
   }
 `;
@@ -24,11 +27,14 @@ export const listSubmissions = /* GraphQL */ `
       items {
         id
         showcaseID
+        photo
+        uploadedDate
         createdAt
         updatedAt
         _version
         _deleted
         _lastChangedAt
+        owner
       }
       nextToken
       startedAt
@@ -51,11 +57,14 @@ export const syncSubmissions = /* GraphQL */ `
       items {
         id
         showcaseID
+        photo
+        uploadedDate
         createdAt
         updatedAt
         _version
         _deleted
         _lastChangedAt
+        owner
       }
       nextToken
       startedAt

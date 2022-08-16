@@ -4,45 +4,57 @@
 export const onCreateSubmission = /* GraphQL */ `
   subscription OnCreateSubmission(
     $filter: ModelSubscriptionSubmissionFilterInput
+    $owner: String
   ) {
-    onCreateSubmission(filter: $filter) {
+    onCreateSubmission(filter: $filter, owner: $owner) {
       id
       showcaseID
+      photo
+      uploadedDate
       createdAt
       updatedAt
       _version
       _deleted
       _lastChangedAt
+      owner
     }
   }
 `;
 export const onUpdateSubmission = /* GraphQL */ `
   subscription OnUpdateSubmission(
     $filter: ModelSubscriptionSubmissionFilterInput
+    $owner: String
   ) {
-    onUpdateSubmission(filter: $filter) {
+    onUpdateSubmission(filter: $filter, owner: $owner) {
       id
       showcaseID
+      photo
+      uploadedDate
       createdAt
       updatedAt
       _version
       _deleted
       _lastChangedAt
+      owner
     }
   }
 `;
 export const onDeleteSubmission = /* GraphQL */ `
   subscription OnDeleteSubmission(
     $filter: ModelSubscriptionSubmissionFilterInput
+    $owner: String
   ) {
-    onDeleteSubmission(filter: $filter) {
+    onDeleteSubmission(filter: $filter, owner: $owner) {
       id
       showcaseID
+      photo
+      uploadedDate
       createdAt
       updatedAt
       _version
       _deleted
       _lastChangedAt
+      owner
     }
   }
 `;
