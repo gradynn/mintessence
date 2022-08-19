@@ -7,17 +7,19 @@ import HomePage from './pages/homePage/homePage';
 import ProfilePage from './pages/profilePage/profilePage';
 import CustomAuthenticator from './pages/signUpSignInPage/signUpSignInPage';
 import ShowcaseDetailsPage from './pages/showcaseDetailsPage/showcaseDetailsPage';
+import Footer from './components/footer/footer';
 
 function App() {
   return (
     <Router>
-    <Navbar />
-    <Routes>
-      <Route path='/' element={<HomePage />} />
-      <Route path='/profile' element={<ProfilePage />} />
-      <Route path='/sign-in' element={<CustomAuthenticator />} />
-      <Route path='/showcase/:showcaseId' element={<ShowcaseDetailsPage />} />
-    </Routes>
+      <Navbar />
+      <Routes>
+        <Route path='/' element={<HomePage />} />
+        <Route path='/profile' element={<ProfilePage />} />
+        <Route path='/sign-in' element={<CustomAuthenticator />} />
+        <Route path='/showcase/:showcaseId' element={<ShowcaseDetailsPage />} />
+      </Routes>
+      <Footer />
     </Router>
   );
 }

@@ -5,13 +5,3 @@ section {
 	font-size: 32px;
 	font-weight: bold;
 }
-
-.container {
-	scroll-snap-type: y mandatory;
-	height: 100vh;
-	overflow-y: scroll;
-}
-
-.child {
-	scroll-snap-align: center;
-}

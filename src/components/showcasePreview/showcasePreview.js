@@ -29,6 +29,11 @@ class ShowcasePreview extends React.Component {
         const start = new Date();
         var secondsUntil = end - start;
 
+        var hasEnded = false;
+        if (secondsUntil < 0) {
+            hasEnded = true;
+        }
+
         // reduce down to days, hours, minutes, seconds
         const daysUntil = Math.trunc(secondsUntil / 86400000);
         secondsUntil -= (daysUntil * 86400000);
@@ -45,7 +50,8 @@ class ShowcasePreview extends React.Component {
             days: daysUntil,
             hours: hoursUntil,
             minutes: minutesUntil,
-            seconds: secondsUntil
+            seconds: secondsUntil,
+            ended: hasEnded
         };
     }
 
@@ -99,13 +105,21 @@ class ShowcasePreview extends React.Component {
             <div className='infoWrapper'>
                 <p id='artistName'>{this.props.artistName}</p>
                 <p id='showcaseTitle'>{this.props.showcaseTitle}</p>
-                <p className='standardText'>Showcase closing in...</p>
-                <div className="countdownWrapper">
-                    <CountdownCard val={this.state.days} unit="d" />
-                    <CountdownCard val={this.state.hours} unit="h" />
-                    <CountdownCard val={this.state.minutes} unit="m" />
-                    <CountdownCard val={this.state.seconds} unit="s" />
-                </div>
+                { !(this.state.ended) ?
+                    <>
+                    <p className='standardText'>Showcase closing in</p>
+                    <div className="countdownWrapper">
+                        <CountdownCard val={this.state.days} unit="d" />
+                        <CountdownCard val={this.state.hours} unit="h" />
+                        <CountdownCard val={this.state.minutes} unit="m" />
+                        <CountdownCard val={this.state.seconds} unit="s" />
+                    </div>
+                    </>
+                    :
+                    <div id='showcaseEndedCard'>
+                        <p className='standardText'>This showcase has ended.</p>
+                    </div>
+                }
                 <NavLink to={this.state.link}>
                     <button id='showcaseButton'>View Showcase</button>
                 </NavLink>

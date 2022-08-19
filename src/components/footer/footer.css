@@ -1,0 +1,22 @@
+.footerWrapper {
+	background-color: #9A94DC;
+	width: 100%;
+	height: 200px;
+	display: flex;
+	justify-content: center;
+    color: white;
+    align-items: center;
+}
+
+.footerSectionHeader {
+	font-size: 30px;
+}
+
+#footerLogo {
+    height: 100px;
+    width: auto;
+}
+
+.footerSection {
+    margin: 50px;
+}
