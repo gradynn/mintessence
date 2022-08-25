@@ -24,10 +24,17 @@ export const schema = {
                     "isRequired": false,
                     "attributes": []
                 },
-                "uploadedDate": {
-                    "name": "uploadedDate",
+                "uploaderEmail": {
+                    "name": "uploaderEmail",
                     "isArray": false,
-                    "type": "AWSDateTime",
+                    "type": "AWSEmail",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "uploaderName": {
+                    "name": "uploaderName",
+                    "isArray": false,
+                    "type": "String",
                     "isRequired": false,
                     "attributes": []
                 },
@@ -188,5 +195,5 @@ export const schema = {
     },
     "enums": {},
     "nonModels": {},
-    "version": "e2a3ea790214057f3918d46ada096ace"
+    "version": "e1774fc0df33d0ec3717ef7668826a18"
 };

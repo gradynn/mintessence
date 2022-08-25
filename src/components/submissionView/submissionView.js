@@ -1,12 +1,17 @@
 import { API } from "aws-amplify";
-import React from "react";
-import { convertCompilerOptionsFromJson } from "typescript";
+import React, { useState } from "react";
 import * as queries from '../../graphql/queries';
 import './submissionView.css';
+import SubmissionModal from "../submissionModal/submissionModal";
 
-const Submission = (props) => {
+function Submission(props) {
+    const [isOpen, setIsOpen] = useState(false);
+
     return(
-        <img className='submissionPhoto' src={props.submission.photo} />
+        <><button onClick={() => setIsOpen(true)} className='submissionModalButton' >
+            <img className='submissionPhoto' src={props.submission.photo} />
+        </button>
+        <SubmissionModal open={isOpen} onClose={() => setIsOpen(false)} submission={props.submission} /></>
     );
 }
 
@@ -34,7 +39,7 @@ class SubmissionView extends React.Component {
 
     render() {
         return(
-            <div class='submissions'>
+            <div className='submissions'>
                 {this.state.submissions.map(item => (
                     <Submission submission={item} />
                 ))}

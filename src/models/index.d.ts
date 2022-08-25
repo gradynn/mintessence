@@ -16,7 +16,8 @@ export declare class Submission {
   readonly id: string;
   readonly showcaseID: string;
   readonly photo?: string | null;
-  readonly uploadedDate?: string | null;
+  readonly uploaderEmail?: string | null;
+  readonly uploaderName?: string | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
   constructor(init: ModelInit<Submission, SubmissionMetaData>);

@@ -2,6 +2,7 @@
     object-fit: cover;
     width: 350px;
     height: 350px;
+    margin: 10px;
 }
 
 .submissions {
@@ -11,3 +12,12 @@
     justify-items: center;
 }
 
+.submissionPhoto:hover {
+	border: 5px solid #9A94DC;
+    margin: 5px;
+}
+
+.submissionModalButton {
+    background-color: transparent;
+    border: none;
+}

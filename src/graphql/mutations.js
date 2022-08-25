@@ -10,7 +10,8 @@ export const createSubmission = /* GraphQL */ `
       id
       showcaseID
       photo
-      uploadedDate
+      uploaderEmail
+      uploaderName
       createdAt
       updatedAt
       _version
@@ -29,7 +30,8 @@ export const updateSubmission = /* GraphQL */ `
       id
       showcaseID
       photo
-      uploadedDate
+      uploaderEmail
+      uploaderName
       createdAt
       updatedAt
       _version
@@ -48,7 +50,8 @@ export const deleteSubmission = /* GraphQL */ `
       id
       showcaseID
       photo
-      uploadedDate
+      uploaderEmail
+      uploaderName
       createdAt
       updatedAt
       _version

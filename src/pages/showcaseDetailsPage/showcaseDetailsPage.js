@@ -28,11 +28,14 @@ class ShowcaseDetails extends React.Component {
     constructor(props) {
         super(props);
 
-        console.log(props.sc);
-
         const end = new Date(props.sc.endDate);
         const start = new Date();
         var secondsUntil = end - start;
+
+        var hasEnded = false;
+        if (secondsUntil < 0) {
+            hasEnded = true;
+        }
 
         const daysUntil = Math.trunc(secondsUntil / 86400000);
         secondsUntil -= (daysUntil * 86400000);
@@ -50,7 +53,8 @@ class ShowcaseDetails extends React.Component {
             hours: hoursUntil,
             minutes: minutesUntil,
             seconds: secondsUntil,
-            submit: false
+            submit: false,
+            ended: hasEnded
         };
 
         this.toggleViewSubmissions = this.toggleViewSubmissions.bind(this);
@@ -118,25 +122,47 @@ class ShowcaseDetails extends React.Component {
                     <div style={{'flex-direction': 'column'}}>
                         <p className='artistName'>{this.props.sc.artistName}</p>
                         <p className='showcaseTitle'>{this.props.sc.title}</p>
-                        <p className='standardText'>Showcase closing in...</p>
-                        <div className='countdownWrapper'>
-                            <CountdownCard val={this.state.days} unit="d" />
-                            <CountdownCard val={this.state.hours} unit="h" />
-                            <CountdownCard val={this.state.minutes} unit="m" />
-                            <CountdownCard val={this.state.seconds} unit="s" />
-                        </div>
+                        {!(this.state.ended) ?
+                            <><p className='standardText'>Showcase closing in...</p><div className='countdownWrapper'>
+                                <CountdownCard val={this.state.days} unit="d" />
+                                <CountdownCard val={this.state.hours} unit="h" />
+                                <CountdownCard val={this.state.minutes} unit="m" />
+                                <CountdownCard val={this.state.seconds} unit="s" />
+                            </div></>
+                        :
+                            <div id='showcaseEndedCard'>
+                                <p className='standardText'> This showcase has ended.</p>
+                            </div>
+                        }   
                     </div>
                 </div>
-                <div className='tabButtons'>
-                    <button onClick={this.toggleViewSubmissions}>
-                        View Submissions
-                    </button>
-                    <button onClick={this.toggleViewSubmit}>
-                        Upload Submissions
-                    </button>
-                </div>
+                { !(this.state.submit) ? 
+                    (
+                        <div id='tabButtons'>
+                            <button className='selectedTab' onClick={this.toggleViewSubmissions}>
+                                View Submissions
+                            </button>
+                            <button className='unselectedTab' onClick={this.toggleViewSubmit}>
+                                Upload Submission
+                            </button>
+                        </div>
+                    )
+                :
+                    (
+                        <div id='tabButtons'>
+                            <button className='unselectedTab' onClick={this.toggleViewSubmissions}>
+                                View Submissions
+                            </button>
+                            <button className='selectedTab' onClick={this.toggleViewSubmit}>
+                                Upload Submission
+                            </button>
+                        </div>
+                    )
+                }
+                <div className='horizontalSeperator'></div>
                 {(!this.state.submit) ? 
-                    <SubmissionView matchId={this.props.sc.id}/> :
+                    <SubmissionView matchId={this.props.sc.id}/> 
+                    :
                     <></>
                 }
             </div>

@@ -1,15 +1,17 @@
 section {
     display: grid;
 	place-items: center;
-	height: 100vh;
 	font-size: 32px;
 	font-weight: bold;
+	height: fit-content;
+	min-height: 100vh;
 }
 
 .showcaseDetailsWrapper {
 	display: flex;
 	flex-direction: column;
 	width: 95%;
+	min-height: fit-content;
 }
 
 .showcaseInfo {
@@ -46,5 +48,44 @@ section {
     margin-bottom: 14px;
 }
 
+#tabButtons {
+	display: flex;
+	justify-content: center;
 
+}
+
+.horizontalSeperator {
+	background-color: #9A94DC;
+	width: 95vw;
+	height: 5px;
+	border-radius: 50px;
+	margin-bottom: 10px;
+}
+
+.selectedTab {
+	border: none;
+	width: 45vw;
+	background-color: #9A94DC;
+	color: white;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	font-size: 25px;
+}
+
+.unselectedTab {
+	border: none;
+	width: 45vw;
+	border: 2px solid #9A94DC;
+	background-color: white;
+	color: #9A94DC;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	border-style: solid solid none solid; 
+	font-size: 25px;
+}
+
+.unselectedTab:hover {
+	color: white;
+	background-color: #9A94DC;
+}
 

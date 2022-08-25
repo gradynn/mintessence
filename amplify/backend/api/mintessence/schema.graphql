@@ -2,7 +2,8 @@ type Submission @model @auth(rules: [{allow: public, operations: [read]}, {allow
   id: ID!
   showcaseID: ID! @index(name: "byShowcase")
   photo: AWSURL
-  uploadedDate: AWSDateTime
+  uploaderEmail: AWSEmail
+  uploaderName: String
 }
 
 type Showcase @model @auth(rules: [{allow: public}]) {

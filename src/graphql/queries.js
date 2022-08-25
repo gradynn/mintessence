@@ -7,7 +7,8 @@ export const getSubmission = /* GraphQL */ `
       id
       showcaseID
       photo
-      uploadedDate
+      uploaderEmail
+      uploaderName
       createdAt
       updatedAt
       _version
@@ -28,7 +29,8 @@ export const listSubmissions = /* GraphQL */ `
         id
         showcaseID
         photo
-        uploadedDate
+        uploaderEmail
+        uploaderName
         createdAt
         updatedAt
         _version
@@ -58,7 +60,8 @@ export const syncSubmissions = /* GraphQL */ `
         id
         showcaseID
         photo
-        uploadedDate
+        uploaderEmail
+        uploaderName
         createdAt
         updatedAt
         _version
