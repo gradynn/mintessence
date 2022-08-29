@@ -32,6 +32,8 @@ class SubmissionView extends React.Component {
         allSubmissions = allSubmissions.filter(item => !(item._deleted));
         allSubmissions = allSubmissions.filter(item => (item.showcaseID === this.props.matchId));
 
+        console.log('Getting submissions');
+
         this.setState({
             submissions: allSubmissions
         });

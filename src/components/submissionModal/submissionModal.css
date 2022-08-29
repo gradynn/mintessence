@@ -25,6 +25,10 @@
     max-height: 90vh;
 }
 
+#modalBody {
+    font-size: 28px;
+}
+
 #modalCloseButton {
     background-color: transparent;
     border: none;

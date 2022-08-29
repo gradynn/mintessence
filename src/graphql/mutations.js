@@ -17,7 +17,6 @@ export const createSubmission = /* GraphQL */ `
       _version
       _deleted
       _lastChangedAt
-      owner
     }
   }
 `;
@@ -37,7 +36,6 @@ export const updateSubmission = /* GraphQL */ `
       _version
       _deleted
       _lastChangedAt
-      owner
     }
   }
 `;
@@ -57,7 +55,6 @@ export const deleteSubmission = /* GraphQL */ `
       _version
       _deleted
       _lastChangedAt
-      owner
     }
   }
 `;

@@ -18,3 +18,74 @@
 	height: 100vh;
 }
 
+#formWrapper {
+	flex-direction: column;
+	justify-content: center;
+}
+
+section {
+    display: grid;
+	place-items: center;
+	height: fit-content;
+	min-height: 100vh;
+}
+
+.verticalContainer {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.horizontalContainer {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.inputField {
+	margin: 10px;
+	width: 250px;
+	border-radius: 50px;
+	padding: 10px;
+	border-color: #9A94DC;
+	border-style: solid;
+}
+
+.formButton {
+	border-radius: 50px;
+	padding: 10px 25px 10px 25px;
+	border-color: #9A94DC;
+	border-style: solid;
+	color: #9A94DC;
+	background-color: white;
+	margin: 10px;
+	transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
+	font-size: 14px;
+}
+
+.formButton:hover {
+	color: white;
+	background-color: #9A94DC;
+	box-shadow: 0 0 5px 5px #9A94DC inset;
+}
+
+.formText {
+	margin: 50px;
+	text-align: center;
+}
+
+.primaryFormText {
+	font-weight: 500;
+	font-size: 36px;
+}
+
+.formSubText {
+	font-weight: 400;
+	font-size: 28px;
+}
+
+.notificationText {
+	font-size: 14px;
+	color: red;
+	font-weight: 400;
+}

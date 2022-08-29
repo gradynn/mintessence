@@ -50,7 +50,7 @@ export const UserButton = styled.button`
     appearance: none;
     background-color: transparent;
     border: 2px solid #9A94DC;
-    border-radius: 0.6em;
+    border-radius: 50px;
     color: #9A94DC;
     cursor: pointer;
     display: flex;

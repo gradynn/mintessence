@@ -2,11 +2,5 @@
   "AppSyncApiName": "mintessence",
   "DynamoDBBillingMode": "PAY_PER_REQUEST",
   "DynamoDBEnableServerSideEncryption": false,
-  "AuthCognitoUserPoolId": {
-    "Fn::GetAtt": [
-      "authmintessence3452e3de",
-      "Outputs.UserPoolId"
-    ]
-  },
-  "AuthModeLastUpdated": "2022-08-15T21:17:03.296Z"
+  "AuthModeLastUpdated": "2022-08-25T21:29:29.708Z"
 }

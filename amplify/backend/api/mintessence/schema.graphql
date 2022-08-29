@@ -1,4 +1,4 @@
-type Submission @model @auth(rules: [{allow: public, operations: [read]}, {allow: owner}]) {
+type Submission @model @auth(rules: [{allow: public}]) {
   id: ID!
   showcaseID: ID! @index(name: "byShowcase")
   photo: AWSURL

@@ -7,19 +7,14 @@ export type AmplifyDependentResourcesAttributes = {
         }
     },
     "auth": {
-        "mintessence3452e3de": {
+        "mintessence510fe9f7": {
             "IdentityPoolId": "string",
             "IdentityPoolName": "string",
             "UserPoolId": "string",
             "UserPoolArn": "string",
             "UserPoolName": "string",
             "AppClientIDWeb": "string",
-            "AppClientID": "string",
-            "CreatedSNSRole": "string"
-        },
-        "userPoolGroups": {
-            "ArtistsGroupRole": "string",
-            "BasicUsersGroupRole": "string"
+            "AppClientID": "string"
         }
     }
 }
