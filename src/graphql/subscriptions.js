@@ -2,15 +2,11 @@
 // this is an auto generated file. This will be overwritten
 
 export const onCreateSubmission = /* GraphQL */ `
-  subscription OnCreateSubmission(
-    $filter: ModelSubscriptionSubmissionFilterInput
-  ) {
-    onCreateSubmission(filter: $filter) {
+  subscription OnCreateSubmission {
+    onCreateSubmission {
       id
-      showcaseID
       photo
-      uploaderEmail
-      uploaderName
+      showcaseID
       createdAt
       updatedAt
       _version
@@ -20,15 +16,11 @@ export const onCreateSubmission = /* GraphQL */ `
   }
 `;
 export const onUpdateSubmission = /* GraphQL */ `
-  subscription OnUpdateSubmission(
-    $filter: ModelSubscriptionSubmissionFilterInput
-  ) {
-    onUpdateSubmission(filter: $filter) {
+  subscription OnUpdateSubmission {
+    onUpdateSubmission {
       id
-      showcaseID
       photo
-      uploaderEmail
-      uploaderName
+      showcaseID
       createdAt
       updatedAt
       _version
@@ -38,15 +30,11 @@ export const onUpdateSubmission = /* GraphQL */ `
   }
 `;
 export const onDeleteSubmission = /* GraphQL */ `
-  subscription OnDeleteSubmission(
-    $filter: ModelSubscriptionSubmissionFilterInput
-  ) {
-    onDeleteSubmission(filter: $filter) {
+  subscription OnDeleteSubmission {
+    onDeleteSubmission {
       id
-      showcaseID
       photo
-      uploaderEmail
-      uploaderName
+      showcaseID
       createdAt
       updatedAt
       _version
@@ -56,17 +44,18 @@ export const onDeleteSubmission = /* GraphQL */ `
   }
 `;
 export const onCreateShowcase = /* GraphQL */ `
-  subscription OnCreateShowcase($filter: ModelSubscriptionShowcaseFilterInput) {
-    onCreateShowcase(filter: $filter) {
+  subscription OnCreateShowcase {
+    onCreateShowcase {
       id
       title
+      photo
+      endDate
+      description
       Submissions {
         nextToken
         startedAt
       }
-      artistName
-      endDate
-      photo
+      artist
       createdAt
       updatedAt
       _version
@@ -76,17 +65,18 @@ export const onCreateShowcase = /* GraphQL */ `
   }
 `;
 export const onUpdateShowcase = /* GraphQL */ `
-  subscription OnUpdateShowcase($filter: ModelSubscriptionShowcaseFilterInput) {
-    onUpdateShowcase(filter: $filter) {
+  subscription OnUpdateShowcase {
+    onUpdateShowcase {
       id
       title
+      photo
+      endDate
+      description
       Submissions {
         nextToken
         startedAt
       }
-      artistName
-      endDate
-      photo
+      artist
       createdAt
       updatedAt
       _version
@@ -96,17 +86,18 @@ export const onUpdateShowcase = /* GraphQL */ `
   }
 `;
 export const onDeleteShowcase = /* GraphQL */ `
-  subscription OnDeleteShowcase($filter: ModelSubscriptionShowcaseFilterInput) {
-    onDeleteShowcase(filter: $filter) {
+  subscription OnDeleteShowcase {
+    onDeleteShowcase {
       id
       title
+      photo
+      endDate
+      description
       Submissions {
         nextToken
         startedAt
       }
-      artistName
-      endDate
-      photo
+      artist
       createdAt
       updatedAt
       _version

@@ -25,7 +25,7 @@ class HomePageShowcases extends React.Component {
 
             const cleanShowcases = allShowcases.filter(item => !(item._deleted));
 
-            console.log(cleanShowcases[1]);
+            console.log(cleanShowcases);
 
             this.setState({
                 showcases: cleanShowcases

@@ -10,32 +10,18 @@ export const schema = {
                     "isRequired": true,
                     "attributes": []
                 },
+                "photo": {
+                    "name": "photo",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
                 "showcaseID": {
                     "name": "showcaseID",
                     "isArray": false,
                     "type": "ID",
                     "isRequired": true,
-                    "attributes": []
-                },
-                "photo": {
-                    "name": "photo",
-                    "isArray": false,
-                    "type": "AWSURL",
-                    "isRequired": false,
-                    "attributes": []
-                },
-                "uploaderEmail": {
-                    "name": "uploaderEmail",
-                    "isArray": false,
-                    "type": "AWSEmail",
-                    "isRequired": false,
-                    "attributes": []
-                },
-                "uploaderName": {
-                    "name": "uploaderName",
-                    "isArray": false,
-                    "type": "String",
-                    "isRequired": false,
                     "attributes": []
                 },
                 "createdAt": {
@@ -78,10 +64,8 @@ export const schema = {
                             {
                                 "allow": "public",
                                 "operations": [
-                                    "create",
-                                    "update",
-                                    "delete",
-                                    "read"
+                                    "read",
+                                    "create"
                                 ]
                             }
                         ]
@@ -106,6 +90,27 @@ export const schema = {
                     "isRequired": false,
                     "attributes": []
                 },
+                "photo": {
+                    "name": "photo",
+                    "isArray": false,
+                    "type": "AWSURL",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "endDate": {
+                    "name": "endDate",
+                    "isArray": false,
+                    "type": "AWSDate",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "description": {
+                    "name": "description",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
                 "Submissions": {
                     "name": "Submissions",
                     "isArray": true,
@@ -120,24 +125,10 @@ export const schema = {
                         "associatedWith": "showcaseID"
                     }
                 },
-                "artistName": {
-                    "name": "artistName",
+                "artist": {
+                    "name": "artist",
                     "isArray": false,
                     "type": "String",
-                    "isRequired": false,
-                    "attributes": []
-                },
-                "endDate": {
-                    "name": "endDate",
-                    "isArray": false,
-                    "type": "AWSDate",
-                    "isRequired": false,
-                    "attributes": []
-                },
-                "photo": {
-                    "name": "photo",
-                    "isArray": false,
-                    "type": "AWSURL",
                     "isRequired": false,
                     "attributes": []
                 },
@@ -172,9 +163,6 @@ export const schema = {
                             {
                                 "allow": "public",
                                 "operations": [
-                                    "create",
-                                    "update",
-                                    "delete",
                                     "read"
                                 ]
                             }
@@ -186,5 +174,5 @@ export const schema = {
     },
     "enums": {},
     "nonModels": {},
-    "version": "e1774fc0df33d0ec3717ef7668826a18"
+    "version": "6ce35c391ffec46ce537bb4d96df3f35"
 };

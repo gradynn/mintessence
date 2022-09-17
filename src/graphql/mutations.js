@@ -8,10 +8,8 @@ export const createSubmission = /* GraphQL */ `
   ) {
     createSubmission(input: $input, condition: $condition) {
       id
-      showcaseID
       photo
-      uploaderEmail
-      uploaderName
+      showcaseID
       createdAt
       updatedAt
       _version
@@ -27,10 +25,8 @@ export const updateSubmission = /* GraphQL */ `
   ) {
     updateSubmission(input: $input, condition: $condition) {
       id
-      showcaseID
       photo
-      uploaderEmail
-      uploaderName
+      showcaseID
       createdAt
       updatedAt
       _version
@@ -46,10 +42,8 @@ export const deleteSubmission = /* GraphQL */ `
   ) {
     deleteSubmission(input: $input, condition: $condition) {
       id
-      showcaseID
       photo
-      uploaderEmail
-      uploaderName
+      showcaseID
       createdAt
       updatedAt
       _version
@@ -66,13 +60,14 @@ export const createShowcase = /* GraphQL */ `
     createShowcase(input: $input, condition: $condition) {
       id
       title
+      photo
+      endDate
+      description
       Submissions {
         nextToken
         startedAt
       }
-      artistName
-      endDate
-      photo
+      artist
       createdAt
       updatedAt
       _version
@@ -89,13 +84,14 @@ export const updateShowcase = /* GraphQL */ `
     updateShowcase(input: $input, condition: $condition) {
       id
       title
+      photo
+      endDate
+      description
       Submissions {
         nextToken
         startedAt
       }
-      artistName
-      endDate
-      photo
+      artist
       createdAt
       updatedAt
       _version
@@ -112,13 +108,14 @@ export const deleteShowcase = /* GraphQL */ `
     deleteShowcase(input: $input, condition: $condition) {
       id
       title
+      photo
+      endDate
+      description
       Submissions {
         nextToken
         startedAt
       }
-      artistName
-      endDate
-      photo
+      artist
       createdAt
       updatedAt
       _version

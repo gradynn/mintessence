@@ -5,10 +5,8 @@ export const getSubmission = /* GraphQL */ `
   query GetSubmission($id: ID!) {
     getSubmission(id: $id) {
       id
-      showcaseID
       photo
-      uploaderEmail
-      uploaderName
+      showcaseID
       createdAt
       updatedAt
       _version
@@ -26,10 +24,8 @@ export const listSubmissions = /* GraphQL */ `
     listSubmissions(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
-        showcaseID
         photo
-        uploaderEmail
-        uploaderName
+        showcaseID
         createdAt
         updatedAt
         _version
@@ -56,10 +52,8 @@ export const syncSubmissions = /* GraphQL */ `
     ) {
       items {
         id
-        showcaseID
         photo
-        uploaderEmail
-        uploaderName
+        showcaseID
         createdAt
         updatedAt
         _version
@@ -76,13 +70,14 @@ export const getShowcase = /* GraphQL */ `
     getShowcase(id: $id) {
       id
       title
+      photo
+      endDate
+      description
       Submissions {
         nextToken
         startedAt
       }
-      artistName
-      endDate
-      photo
+      artist
       createdAt
       updatedAt
       _version
@@ -101,9 +96,10 @@ export const listShowcases = /* GraphQL */ `
       items {
         id
         title
-        artistName
-        endDate
         photo
+        endDate
+        description
+        artist
         createdAt
         updatedAt
         _version
@@ -131,9 +127,10 @@ export const syncShowcases = /* GraphQL */ `
       items {
         id
         title
-        artistName
-        endDate
         photo
+        endDate
+        description
+        artist
         createdAt
         updatedAt
         _version

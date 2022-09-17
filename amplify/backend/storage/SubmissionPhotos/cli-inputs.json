@@ -1,0 +1,16 @@
+{
+  "resourceName": "SubmissionPhotos",
+  "policyUUID": "e82fe5ec",
+  "bucketName": "mintessence23012842238e41ff9018df41abc1f02d",
+  "storageAccess": "authAndGuest",
+  "guestAccess": [
+    "READ"
+  ],
+  "authAccess": [
+    "READ",
+    "CREATE_AND_UPDATE",
+    "DELETE"
+  ],
+  "triggerFunction": "NONE",
+  "groupAccess": {}
+}
